@@ -1,26 +1,32 @@
 from .base import *
+
 DEBUG = False
-#TODO CONFIGURAR mi dominio al hacer deploy
 
-ALLOWED_HOSTS = ["midominio-production.com"]
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+# TODO: Configurar el dominio al hacer deploy a production
+ALLOWED_HOSTS = ['127.0.0.1', 'midominio-production.com']
 
+# TODO: Configurar db para production
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #En caso de usar postgres, cambiar a .postgresql, en caso de usar mysql, cambiar a .mysql
-        
-        #'NAME': os.getenv('DB_NAME'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 
-        #'USER': os.getenv('DB_USER'),
+        # En caso de usar una postgres
+        # 'ENGINE': 'django.db.backends.postgresql',
 
-        #'PASSWORD': os.getenv('DB_PASSWORD'),
+        # En caso de usar una mysql
+        # 'ENGINE': 'django.db.backends.mysql',
 
-        #'HOST': os.getenv('DB_HOST'),
+        # 'NAME': os.getenv('DB_NAME'),
 
-        #'PORT': os.getenv('DB_PORT'),
+        # 'USER': os.getenv('DB_USER'),
+
+        # 'PASSWORD': os.getenv('DB_PASSWORD'),
+
+        # 'HOST': os.getenv('DB_HOST'),
+
+        # 'PORT': os.getenv('DB_PORT'),
     }
 }
 
-os.environ['DJANGO_PORT'] = "8000"
+os.environ['DJANGO_PORT'] = '8080'
