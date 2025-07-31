@@ -1,7 +1,7 @@
 from .base import *
 
 DEBUG = False
-
+SECRET_KEY='ybt--2&svpe3j0hs3a!j4)6^s*a(zeh)$%evbjdd1hz@o_)kfw'
 # TODO: Configurar el dominio al hacer deploy a production
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'midominio-production.com']
 
